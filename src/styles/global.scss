@@ -1,0 +1,102 @@
+// SASS modules
+@use "sass:map";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&display=swap');
+
+// Catppuccin Mocha color palette
+$colorPalette: (
+    crust: #11111b,
+    mantle: #181825,
+    base: #1e1e2e,
+
+    surface0: #313244,
+    surface1: #45475a,
+    surface2: #585b70,
+
+    overlay0: #6c7086,
+    overlay1: #7f849c,
+    overlay2: #9399b2,
+
+    subtext0: #a6adc8,
+    subtext1: #bac2de,
+    text: #cdd6f4,
+
+    lavender: #b4befe,
+    blue: #89b4fa,
+    sapphire: #74c7ec,
+    sky: #89dceb,
+    teal: #94e2d5,
+    green: #a6e3a1,
+    yellow: #f9e2af,
+    peach: #fab387,
+    maroon: #eba0ac,
+    red: #f38ba8,
+    mauve: #cba6f7,
+    pink: #f5c2e7,
+    flamingo: #f2cdcd,
+    rosewater: #f5e0dc,
+);
+
+// Padding of header components
+$headerHorizontalPadding: 5px;
+
+// Website root element
+:root {
+    font-family: "Inter";
+    background-color: map.get($colorPalette, base);
+    color: map.get($colorPalette, text);
+}
+
+// Gets rid of the gap between the header and the edges of the site
+body {margin: 0;}
+
+// Header
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: map.get($colorPalette, crust);
+
+    // Profile
+    .profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        order: 1;
+        padding-left: $headerHorizontalPadding;
+
+        // Username and pronouns
+        #name, #pronouns {margin: 0;}
+        #pronouns {color: map.get($colorPalette, subtext0)}
+
+        // Profile picture
+        #pfp {
+            border-radius: 50%;
+            height: 50px;
+        }
+    }
+
+    // Page navigation
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        order: 2;
+    }
+
+    // Logo
+    #logo {
+        order: 3;
+        width: 40px;
+        padding-right: $headerHorizontalPadding;
+    }
+}
+
+// Anchors/Links
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: map.get($colorPalette, sapphire);
+    &:hover {text-decoration: underline;}
+}

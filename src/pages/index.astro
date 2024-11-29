@@ -1,0 +1,19 @@
+---
+// Layouts
+import DefaultLayout from "../layouts/default.astro";
+
+// Variables
+const identity = {
+	name: "Voxi0",
+	age: "15",
+	country: "the UK",
+	hobbies: ["programming", "listening to music"]
+};
+---
+<DefaultLayout title="Voxi0" icon="/favicon.svg">
+	<p style="text-align: center;">
+		Hi! I'm {identity.name}. I'm a {identity.age}yo Linux/Nix and computer science enthusiast.
+		I'm currently living in {identity.country}. I like {identity.hobbies.join(", ").replace(/, ([^,]*)$/, " and $1")}.
+		I'm usually online on Discord so reach out to me and I'll reply pretty soon 😃.
+	</p>
+</DefaultLayout>
