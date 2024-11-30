@@ -1,0 +1,20 @@
+// SASS modules
+@use "sass:map";
+
+// Globals e.g. color palette
+@use "./global.scss";
+
+main {
+    // Flexbox
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    // Maximum width for the content
+    max-width: 90%;
+
+    // Padding (for better readability) and margin (to center the div within the parent container)
+    padding: 1rem;
+    margin: 0 auto;
+}

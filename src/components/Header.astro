@@ -1,4 +1,9 @@
 ---
+const currentPath = Astro.url.pathname;
+const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/blog/', label: 'Blog' },
+];
 ---
 <!-- Header -->
 <header>
@@ -13,8 +18,10 @@
 
     <!-- Page navigation -->
     <nav>
-        <button>
-            <a href="/" target="_self">Home</a>
-        </button>
+        {navItems.map((item) => (
+            <button class={currentPath === item.href ? 'active' : ''}>
+                <a href={item.href}>{item.label}</a>
+            </button>
+        ))}
     </nav>
 </header>

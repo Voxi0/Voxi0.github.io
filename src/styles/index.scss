@@ -1,4 +1,5 @@
 // Main stylesheet to be loaded and used
 // Import all stylesheets
-@import "./global.scss";
-@import "./header.scss";
+@use "./global.scss";
+@use "./header.scss";
+@use "./main.scss";

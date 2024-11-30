@@ -2,7 +2,7 @@
 @use "sass:map";
 
 // Globals e.g. color palette
-@import "./global.scss";
+@use "./global.scss";
 
 // Padding of header components
 $headerPadding: 5px;
@@ -26,7 +26,7 @@ header {
 
         // Username and pronouns
         #name, #pronouns {margin: 0;}
-        #pronouns {color: map.get($colorPalette, subtext0);}
+        #pronouns {color: map.get(global.$colorPalette, subtext0);}
 
         // Profile picture
         #pfp {
@@ -39,9 +39,9 @@ header {
     nav {
         // Flexbox
         display: flex;
-        flex: 1;
-        flex-direction: row;
         justify-content: center;
+
+        // Padding and margin
         padding-top: $headerPadding;
 
         // Button - Links are inside buttons
@@ -50,29 +50,30 @@ header {
             all:unset;
 
             // Border
-            border: 1px solid map.get($colorPalette, sapphire);
+            border: 1px solid map.get(global.$colorPalette, sapphire);
             border-radius: 4px;
 
             // Padding and margin
             padding: 2px 6px;
+            margin: 0px 4px;
 
             // Transitions
             transition-duration: 0.2s;
 
             // Cursor hover on button
-            &:hover {
-                cursor: pointer;
-                box-shadow: 6px 6px 2px 0px black;
-            }
+            &:hover {cursor: pointer;}
 
-            // Button clicked
-            &:active {box-shadow: none;}
+            // Active button - Button for the current page that the user is on
+            &.active {
+                background-color: map.get(global.$colorPalette, sapphire);
+                a {color: map.get(global.$colorPalette, crust);}
+            }
 
             // Anchors/Links
             a {
                 font-weight: bold;
                 text-decoration: none;
-                color: map.get($colorPalette, sapphire);
+                color: map.get(global.$colorPalette, text);
             }
         }
     }
