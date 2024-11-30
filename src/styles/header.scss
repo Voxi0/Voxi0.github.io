@@ -1,0 +1,79 @@
+// SASS modules
+@use "sass:map";
+
+// Globals e.g. color palette
+@import "./global.scss";
+
+// Padding of header components
+$headerPadding: 5px;
+
+// Header
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // Profile
+    .profile {
+        // Flexbox
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        // Padding
+        padding-top: $headerPadding;
+        padding-left: $headerPadding;
+
+        // Username and pronouns
+        #name, #pronouns {margin: 0;}
+        #pronouns {color: map.get($colorPalette, subtext0);}
+
+        // Profile picture
+        #pfp {
+            border-radius: 50%;
+            height: 50px;
+        }
+    }
+
+    // Page navigation
+    nav {
+        // Flexbox
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: $headerPadding;
+
+        // Button - Links are inside buttons
+        button {
+            // Get rid of defaults
+            all:unset;
+
+            // Border
+            border: 1px solid map.get($colorPalette, sapphire);
+            border-radius: 4px;
+
+            // Padding and margin
+            padding: 2px 6px;
+
+            // Transitions
+            transition-duration: 0.2s;
+
+            // Cursor hover on button
+            &:hover {
+                cursor: pointer;
+                box-shadow: 6px 6px 2px 0px black;
+            }
+
+            // Button clicked
+            &:active {box-shadow: none;}
+
+            // Anchors/Links
+            a {
+                font-weight: bold;
+                text-decoration: none;
+                color: map.get($colorPalette, sapphire);
+            }
+        }
+    }
+}

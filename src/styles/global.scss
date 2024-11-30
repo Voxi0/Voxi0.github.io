@@ -38,9 +38,6 @@ $colorPalette: (
     rosewater: #f5e0dc,
 );
 
-// Padding of header components
-$headerHorizontalPadding: 5px;
-
 // Website root element
 :root {
     font-family: "Inter";
@@ -50,53 +47,3 @@ $headerHorizontalPadding: 5px;
 
 // Gets rid of the gap between the header and the edges of the site
 body {margin: 0;}
-
-// Header
-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: map.get($colorPalette, crust);
-
-    // Profile
-    .profile {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        order: 1;
-        padding-left: $headerHorizontalPadding;
-
-        // Username and pronouns
-        #name, #pronouns {margin: 0;}
-        #pronouns {color: map.get($colorPalette, subtext0)}
-
-        // Profile picture
-        #pfp {
-            border-radius: 50%;
-            height: 50px;
-        }
-    }
-
-    // Page navigation
-    nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        order: 2;
-    }
-
-    // Logo
-    #logo {
-        order: 3;
-        width: 40px;
-        padding-right: $headerHorizontalPadding;
-    }
-}
-
-// Anchors/Links
-a {
-    font-weight: bold;
-    text-decoration: none;
-    color: map.get($colorPalette, sapphire);
-    &:hover {text-decoration: underline;}
-}
