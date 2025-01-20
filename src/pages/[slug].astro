@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+
+// Get the slug from the URL
+const { slug } = Astro.params;
+
+// Find the post with the matching slug
+const post = await getCollection('blog').then(posts => posts.find(p => p.slug === slug));
+---
+
+<article>
+  <h1>{post.data.title}</h1>
+  <p>{new Date(post.data.pubDate).toLocaleDateString()}</p>
+  <div>{post.body}</div>
+</article>

@@ -1,7 +1,7 @@
 ---
 // Modules
 import { getCollection } from "astro:content";
-const allBlogPosts = await getCollection("blog");
+const posts = await getCollection('blog');
 
 // Layouts
 import DefaultLayout from "/src/layouts/default.astro";
@@ -11,15 +11,14 @@ import DefaultLayout from "/src/layouts/default.astro";
     <div class="intro">
       <h2>Blog</h2>
       <ul>
-        {allBlogPosts
-          .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+        {posts
+          .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))  // Sort posts by pubDate
           .map(post => (
             <li key={post.slug}>
               <a href={`/blog/${post.slug}`}>{post.data.title}</a>
               <span> — {new Date(post.data.pubDate).toLocaleDateString()}</span>
             </li>
-          ))
-        }
+          ))}
       </ul>
     </div>
   </main>
