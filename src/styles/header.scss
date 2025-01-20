@@ -9,72 +9,72 @@ $headerPadding: 5px;
 
 // Header
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Profile
+  .profile {
+    // Flexbox
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    gap: 10px;
 
-    // Profile
-    .profile {
-        // Flexbox
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
+    // Padding
+    padding-top: $headerPadding;
+    padding-left: $headerPadding;
 
-        // Padding
-        padding-top: $headerPadding;
-        padding-left: $headerPadding;
+    // Username and pronouns
+    #name, #pronouns {margin: 0;}
+    #pronouns {color: map.get(global.$colorPalette, subtext0);}
 
-        // Username and pronouns
-        #name, #pronouns {margin: 0;}
-        #pronouns {color: map.get(global.$colorPalette, subtext0);}
-
-        // Profile picture
-        #pfp {
-            border-radius: 50%;
-            height: 50px;
-        }
+    // Profile picture
+    #pfp {
+      border-radius: 50%;
+      height: 50px;
     }
+  }
 
-    // Page navigation
-    nav {
-        // Flexbox
-        display: flex;
-        justify-content: center;
+  // Page navigation
+  nav {
+    // Flexbox
+    display: flex;
+    justify-content: center;
 
-        // Padding and margin
-        padding-top: $headerPadding;
+    // Padding and margin
+    padding-top: $headerPadding;
 
-        // Button - Links are inside buttons
-        button {
-            // Get rid of defaults
-            all:unset;
+    // Button - Links are inside buttons
+    button {
+      // Get rid of defaults
+      all:unset;
 
-            // Border
-            border: 1px solid map.get(global.$colorPalette, sapphire);
-            border-radius: 4px;
+      // Border
+      border: 1px solid map.get(global.$colorPalette, sapphire);
+      border-radius: 4px;
 
-            // Padding and margin
-            padding: 2px 6px;
-            margin: 0px 4px;
+      // Padding and margin
+      padding: 2px 6px;
+      margin: 0px 4px;
 
-            // Transitions
-            transition-duration: 0.2s;
+      // Transitions
+      transition-duration: 0.2s;
 
-            // Cursor hover on button
-            &:hover {cursor: pointer;}
+      // Cursor hover on button
+      &:hover {cursor: pointer;}
 
-            // Active button - Button for the current page that the user is on
-            &.active {
-                background-color: map.get(global.$colorPalette, sapphire);
-                a {color: map.get(global.$colorPalette, crust);}
-            }
+      // Active button - Button for the current page that the user is on
+      &.active {
+        background-color: map.get(global.$colorPalette, sapphire);
+        a {color: map.get(global.$colorPalette, crust);}
+      }
 
-            // Anchors/Links
-            a {
-                font-weight: bold;
-                text-decoration: none;
-                color: map.get(global.$colorPalette, text);
-            }
-        }
+      // Anchors/Links
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: map.get(global.$colorPalette, text);
+      }
     }
+  }
 }

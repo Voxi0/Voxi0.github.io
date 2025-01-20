@@ -9,21 +9,21 @@ import "../styles/index.scss"
 const { title } = Astro.props;
 ---
 <html lang="en">
-    <head>
-        <!-- Meta tags -->
-        <meta charset="UTF-8"/>
-        <meta name="generator" content={Astro.generator}/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8"/>
+    <meta name="generator" content={Astro.generator}/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <!-- Set favicon and website title -->
-        <link rel="icon" type="image/x-icon" href="/pfp.jpg"/>
-        <title>{title}</title>
-    </head>
-    <body>
-        <!-- Header -->
-        <Header/>
+    <!-- Set favicon and website title -->
+    <link rel="icon" type="image/x-icon" href="/pfp.jpg"/>
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <Header/>
 
-        <!-- Where our code will be inserted -->
-        <slot/>
-    </body>
+    <!-- Where our code will be inserted -->
+    <slot/>
+  </body>
 </html>
