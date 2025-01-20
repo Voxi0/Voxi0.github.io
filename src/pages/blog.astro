@@ -12,7 +12,6 @@ import DefaultLayout from "/src/layouts/default.astro";
       <h2>Blog</h2>
       <ul>
         {allBlogPosts
-          // Sort posts by pubDate (newest first)
           .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
           .map(post => (
             <li key={post.slug}>
