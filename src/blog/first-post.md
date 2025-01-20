@@ -1,7 +1,8 @@
 ---
-title: "My First Post"
-slug: "first-post"
-pubDate: "2025-01-20"
+title: My First Post
+author: Voxi0
+description: "My first blog post"
+pubDate: 2025-01-20
 ---
 # My First Blog Post
 I finally managed to allocate some time to work on my website :D

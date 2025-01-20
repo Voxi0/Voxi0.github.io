@@ -1,24 +1,26 @@
 ---
 // Modules
 import { getCollection } from "astro:content";
-const posts = await getCollection('blog');
 
 // Layouts
 import DefaultLayout from "/src/layouts/default.astro";
+
+// Components
+import BlogPost from '../components/BlogPost.astro';
+
+// All blog posts
+const allPosts = await getCollection("blog");
 ---
 <DefaultLayout title="Blog">
   <main>
     <div class="intro">
       <h2>Blog</h2>
       <ul>
-        {posts
-          .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))  // Sort posts by pubDate
-          .map(post => (
-            <li key={post.slug}>
-              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-              <span> — {new Date(post.data.pubDate).toLocaleDateString()}</span>
-            </li>
-          ))}
+        {
+          allPosts.map((post) => (
+            <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
+          ))
+        }
       </ul>
     </div>
   </main>
