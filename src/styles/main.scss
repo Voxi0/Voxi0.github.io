@@ -4,17 +4,35 @@
 // Globals e.g. color palette
 @use "./global.scss";
 
+// Main body
 main {
-    // Flexbox
+  // Padding (for better readability) and margin (to center the div within the parent container)
+  padding: 1rem;
+  margin: 0 auto;
+
+  // Anchor tags
+  a {
+    text-decoration: none;
+    color: map.get(global.$colorPalette, red);
+    &:visited {color: transparent;}
+  }
+}
+
+// Contact information
+.contact {
+  ul {
+    // Flexbox - Center the links
     display: flex;
-    flex-direction: row;
+    gap: 4px;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
 
-    // Maximum width for the content
-    max-width: 90%;
-
-    // Padding (for better readability) and margin (to center the div within the parent container)
-    padding: 1rem;
-    margin: 0 auto;
+    // List
+    list-style: none;
+    li {
+      // Add a dot after each item but remove the dot after the last item
+      &::after {content: "•";}
+      &:last-child::after {content: "";}
+    }
+  }
 }

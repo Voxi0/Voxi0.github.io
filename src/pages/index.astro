@@ -5,20 +5,50 @@ import DefaultLayout from "../layouts/default.astro";
 // Variables
 const identity = {
 	name: "Voxi0",
-	age: "15",
-	country: "the UK",
-	hobbies: ["programming", "listening to music", "mathematics (even if I'm bad at it 😅)"]
+	age: `${new Date().getFullYear() - 2009}`,
 };
 ---
-<DefaultLayout title="Voxi0" icon="/icon.svg">
-	<main>
-		<div class="intro">
+<DefaultLayout title="Voxi0">
+  <main>
+    <!-- About me -->
+    <div class="intro">
 			<h2>Hi!</h2>
 			<p>
-				My name is <strong>{identity.name}</strong> (I'm not planning to reveal my real name just yet).
-				I'm a {identity.age}yo Linux/Nix and computer science enthusiast.
-				I'm currently living in {identity.country}. I like {identity.hobbies.join(", ").replace(/, ([^,]*)$/, " and $1")}.
-			</p>
-		</div>
+        I'm a {identity.age}yo student and a Linux/Nix enthusiast currently living in the United Kingdom. I was born in Bangladesh and
+        lived there for about 13 years before I came to the United Kingdom on 30<sup>th</sup> September 2022.
+
+        <br><br>
+        I know Bengali as it's my native language and English. Many people assume I'm American because I supposedly have a very
+        American accent. But I've never travelled countries before coming to the UK 😅
+
+        <br><br>
+        I have been using Linux ever since I came to the UK. Since then I learned a lot about Linux and programming in general and also
+        became a terminal addict. I have Neovim pretty much all the time and I'm also planning to check out Emacs someday
+        because it seems really cool :P
+
+        <br><br>
+        I love gaming but not as much as I used  to. My favourite games has definitely got to be Psychopomp, Spooky's Jumpscare Mansion,
+        Half Life 1/2, Ghost of Tsushima, Minecraft and Evade or Phantom Forces on Roblox. As you can tell, I love playing somewhat relaxed
+        games. I highly prioritize the story/lore of a game over all other aspects.
+      
+        <br><br>
+        I also love watching movies and TV shows. I usually watch them with my dad. I'm not gonna list my favourites as there's far
+        too many but some of my favourite shows are <strong>Breaking Bad and Rick and Morty</strong>. I plan on watching Better Call
+        Saul soon. I really like horror although I get scared really easily 😅
+      </p>
+    </div>
+
+    <!-- Contact information - Links to my social media accounts -->
+    <div class="contact">
+      <!-- List linking to my social media accounts -->
+      <ul>
+        <li>
+          <a href="https://www.discord.com/users/1016332310741799054">Discord</a>
+        </li>
+        <li>
+          <a href="https://www.reddit.com/user/derpJava/">Reddit</a>
+        </li>
+      </ul>
+    </div>
 	</main>
 </DefaultLayout>

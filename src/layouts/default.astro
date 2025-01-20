@@ -6,7 +6,7 @@ import Header from "../components/Header.astro";
 import "../styles/index.scss"
 
 // Parameters - Variables that can be passed to this layout
-const { title, icon } = Astro.props;
+const { title } = Astro.props;
 ---
 <html lang="en">
     <head>
@@ -16,7 +16,7 @@ const { title, icon } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <!-- Set favicon and website title -->
-        <link rel="icon" type="image/x-icon" href={icon}/>
+        <link rel="icon" type="image/x-icon" href="/pfp.jpg"/>
         <title>{title}</title>
     </head>
     <body>

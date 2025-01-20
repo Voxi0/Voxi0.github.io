@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "astro": "^4.16.16",
-    "typescript": "^5.7.2"
+    "astro": "^5.1.7",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "postcss": "^8.4.49",
-    "sass": "^1.81.0"
+    "postcss": "^8.5.1",
+    "sass": "^1.83.4"
   }
 }
